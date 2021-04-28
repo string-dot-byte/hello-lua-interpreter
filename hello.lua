@@ -1,15 +1,15 @@
+  
 function RunHello(str)
 	local res = ''
 	local error = false
-	for i = 1, #str do
-		local char = str:sub(i, i)
+	for char in str:gmatch('.') do
 		if char == 'h' then
 			res = res .. 'Hello World'
 		else
 			error = true
-            res = 'ERROR!'
-            break
+          		res = 'ERROR!'
+			break
 		end
 	end
-  return res
+	return res
 end
